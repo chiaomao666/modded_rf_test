@@ -1,1 +1,45 @@
-print("Hello World")
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./favicon.ico" />
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,target-densityDpi=device-dpi" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Web site created using create-react-app" />
+    <link rel="apple-touch-icon" href="./logo192.png" />
+    <link rel="manifest" href="./manifest.json" />
+    <title>RF</title>
+
+    <!-- 小工具載入器 --><script defer="defer" src="./mods/rf_mod_loader.js"></script>
+    <!-- 主程式 --><script defer="defer" src="./static/js/main.94fae2cd.js"></script>
+
+    <link href="./static/css/main.f4ae5b14.css" rel="stylesheet">
+</head>
+
+<body><noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script>
+    function fixAriaHidden() {
+        document.querySelectorAll('[aria-hidden="true"]').forEach(el => {
+        // 修正子元素的 tabindex
+        el.querySelectorAll('[tabindex="0"]').forEach(child => {
+            child.setAttribute('tabindex', '-1');
+        });
+        // 如果焦點在這個元素內，把焦點移出去
+        if (el.contains(document.activeElement)) {
+            document.activeElement.blur();
+        }
+        });
+        document.querySelectorAll('[aria-hidden="true"][tabindex="0"]').forEach(el => {
+        el.setAttribute('tabindex', '-1');
+        });
+    }
+
+    const observer = new MutationObserver(fixAriaHidden);
+    observer.observe(document.body, { subtree: true, childList: true, attributes: true });
+    </script>
+</body>
+
+</html>
